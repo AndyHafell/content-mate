@@ -75,30 +75,34 @@ YouTube Shorts, TikTok, Instagram Reels, X/Twitter, Threads, LinkedIn, Facebook,
 ## Quick Start
 
 ### Prerequisites
-- [n8n](https://n8n.io) instance (self-hosted or cloud)
+- [n8n](https://n8n.io) instance (self-hosted with Docker recommended)
 - [Airtable](https://airtable.com) account
 - API keys for: OpenAI, ElevenLabs, TwitterAPI.io, Replicate, Blotato
 - FFmpeg installed on your n8n server
 - Google Drive (for file storage)
 
-### Setup (3 Steps)
+### Setup (8 Steps)
 
-**Step 1: Import the Airtable base**
-- Create a new Airtable base with the schema in [docs/AIRTABLE_SCHEMA.md](docs/AIRTABLE_SCHEMA.md)
-- Fill in the Setup table with your API keys and table IDs
+The full setup guide walks you through everything: **[Content Mate v2.0 — Complete Setup Guide](https://docs.google.com/document/d/1y3t_ZP4OdOrKWGF20ZXzkJkr5G_3WC4sAhxBuFAXt7A/edit)**
 
-**Step 2: Import the n8n workflow**
-- Open n8n → Workflows → Import from file
-- Select `workflow/content-mate-v2.json`
-- Connect your credentials (Airtable, Google Drive, OpenAI, Telegram, Replicate, Blotato)
+Quick overview:
+1. **Duplicate the Airtable template** (link in the setup guide)
+2. **Download the n8n workflow** from `workflow/content-mate-v2.json`
+3. **Get self-hosted n8n** (Hostinger KVM 2 recommended)
+4. **Install n8n with FFmpeg** (Docker setup with execute command support)
+5. **Create video folder** and set permissions on your server
+6. **Fill in the Setup table** with all your API keys
+7. **Import the workflow** into n8n and configure triggers
+8. **Set up avatars, voices, and music** — then activate
 
-**Step 3: Configure**
-- Add X handles to monitor in the X table
-- Upload avatar videos to the Avatars table
-- Upload background music to the Music table
-- Activate the workflow
+### Monthly Cost
+| Tier | Cost | What You Get |
+|------|------|-------------|
+| **Minimal** | $35-45/mo | Basic usage, fewer videos |
+| **Daily use** | $55-75/mo | 5 videos/day, all platforms |
+| **Scaled** | $100+/mo | High volume, multiple accounts |
 
-See [docs/SETUP.md](docs/SETUP.md) for the full setup guide.
+See [docs/SETUP.md](docs/SETUP.md) for a quick-start reference, or follow the [full setup guide](https://docs.google.com/document/d/1y3t_ZP4OdOrKWGF20ZXzkJkr5G_3WC4sAhxBuFAXt7A/edit) for step-by-step instructions with screenshots.
 
 ---
 
@@ -178,6 +182,12 @@ PRs welcome! Ideas for improvements:
 - Additional platform integrations
 - Better caption animations
 - Scheduling optimization
+
+---
+
+## See Also
+
+**[Clawdia](https://github.com/AndyHafell/clawdia)** — The long-form YouTube automation system. Uses Claude Code + Python to automate show docs, AI thumbnails, and video publishing. Content Mate handles short-form; Clawdia handles long-form.
 
 ---
 
